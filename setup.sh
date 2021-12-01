@@ -60,13 +60,6 @@ then
   chmod +x /usr/local/bin/docker-compose
 fi
 
-# removing iuscomunity as git version 2.30 has been included itno EPEL
-#rpm -qa | grep ius-release > /dev/null 2>&1
-#if [ "$?" -ne 0 ];
-#then
-#  yum install  https://centos7.iuscommunity.org/ius-release.rpm -y
-#fi
-
 rpm -qa | grep git > /dev/null 2>&1
 if [ "$?" -ne 0 ];
 then

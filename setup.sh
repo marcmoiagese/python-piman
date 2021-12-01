@@ -15,6 +15,12 @@ fi
 cd /opt/python-piman
 git pull origin master
 
+rpm -qa | grep epel > /dev/null 2>&1
+if [ "$?" -ne 0 ];
+then
+   yum install epel-release -y
+fi
+
 yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2	\

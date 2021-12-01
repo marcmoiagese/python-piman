@@ -1,0 +1,38 @@
+[hieragen]
+
+debug = true
+auth-facts = [ "eypconf_platformid", "eypconf_magic_hash" ]
+
+[node fqdn]
+node/%{::fqdn}
+
+[node hostname]
+node/%{::hostname}
+
+[env/type/servergroup combined]
+hierarchy/%{::eypconf_env}/%{::eypconf_type}/%{::eypconf_servergroup}
+
+[sg]
+sg/%{::eypconf_sg}
+
+[servergroup]
+servergroup/%{::eypconf_servergroup}
+
+[env/type combined]
+hierarchy/%{::eypconf_env}/%{::eypconf_type}
+
+[type]
+type/%{::eypconf_type}
+
+[env]
+hierarchy/%{::eypconf_env}
+env/%{::eypconf_env}
+
+[project's common os release]
+common-%{::osfamily}-%{::operatingsystemmajrelease}
+
+[project's common os family]
+common-%{::osfamily}
+
+[project's common area]
+common = 0

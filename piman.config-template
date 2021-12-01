@@ -1,0 +1,35 @@
+[piman]
+instance-dir = /opt/puppet-instances
+config-dir = /etc/piman
+instance-template = https://github.com/jordiprats/docker-puppetmaster5
+puppet-fqdn = puppet.systemadmin.es
+# bind-ip = 0.0.0.0
+base-port = 8140
+debug = true
+# enable-puppetboard
+
+# pfgen-config = /etc/piman/pfgen.config
+# sitepp-config = /etc/piman/siteppgen.config
+# hierayaml-config = /etc/piman/hieragen.config
+
+# skip-pfgen = false
+
+[demo]
+
+projects = [ "demo" ]
+
+config = git@gitlab.com:demoproject/demo-config.git
+ssl = git@gitlab.com:demoproject/demo-ssl.git
+files = git@gitlab.com:demoproject/demo-files.git
+instance = git@gitlab.com:demoproject/demo-instance.git
+# puppet-master-port = 8140
+# puppet-board-port = 8141
+# puppet-fqdn = puppet.systemadmin.es
+# bind-ip = 0.0.0.0
+# enable-puppetboard = true
+
+# pfgen-config = /etc/piman/pfgen-demo.config
+# sitepp-config = /etc/piman/siteppgen-demo.config
+# hierayaml-config = /etc/piman/hieragen-demo.config
+# skip-pfgen = false
+# refresh-hierayaml = false

@@ -1,0 +1,81 @@
+[sitegen]
+debug = true
+deep-include-classes = [ "classes" ]
+resource-file = /etc/piman/siteppgen/resource.list
+resource-hash = { "cronjobs": "cron", "crontabs": "cron" }
+
+[common_packages]
+resource-name = package
+merge-strategy = deep
+
+[paquets]
+resource-name = package
+merge-strategy = deep
+
+[base_packages]
+resource-name = package
+merge-strategy = deep
+
+[plain_mounts]
+resource-name = mount
+merge-strategy = deep
+
+[security_limits]
+resource-name = pam::limit
+merge-strategy = deep
+
+[modprobeinstall]
+resource-name = modprobe::install
+merge-strategy = deep
+
+[plain_execs]
+resource-name = exec
+merge-strategy = deep
+
+[etchosts]
+resource-name = host
+merge-strategy = deep
+
+[sshkeys]
+resource-name = ssh_authorized_key
+merge-strategy = deep
+
+[knownhosts]
+resource-name = sshkey
+merge-strategy = deep
+
+[sshprivkeys]
+resource-name = openssh::privkey
+merge-strategy = deep
+
+[sshmatch]
+resource-name = openssh::match
+merge-strategy = deep
+
+[sudos]
+resource-name = sudoers::sudo
+merge-strategy = deep
+
+[tomcatusers]
+resource-name = tomcat::tomcatuser
+merge-strategy = deep
+
+[apachecustomconfs]
+resource-name = apache::custom_conf
+merge-strategy = deep
+
+[apacheserverstatus]
+resource-name = apache::serverstatus
+merge-strategy = deep
+
+[haproxystats]
+resource-name = haproxy::stats
+
+[haproxybackendhttprequestdenies]
+resource-name = haproxy::backend::http_request_deny
+
+[hbarules]
+resource-name = postgresql::hba_rule
+
+[nfsmounts]
+resource-name = nfs::nfsmount

@@ -1,0 +1,21 @@
+[github]
+token = TOKEN-HERE
+debug=false
+
+[jordiprats]
+skip-forked-repos=true
+repo-pattern="eyp-"
+current-version=True
+
+[nttcom-ms]
+skip-forked-repos=true
+repo-pattern="eyp-"
+current-version=True
+
+[saltait]
+skip-forked-repos=true
+repo-pattern="eyp-"
+current-version=True
+
+[systemadmin/systemadmin-demo]
+url = 'ssh://git@git.systemadmin.es:8080/systemadmin/systemadmin-demo.git'

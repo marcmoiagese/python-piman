@@ -1,0 +1,12 @@
+sh
+idna
+wrapt
+PyJWT
+certifi
+inflect
+chardet
+urllib3
+requests
+PyGithub
+Deprecated
+configparser

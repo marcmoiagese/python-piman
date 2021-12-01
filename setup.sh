@@ -6,6 +6,12 @@ then
   exit 1
 fi
 
+if [ $(grep -Eo "[0-9]*\.[0-9]*" /etc/redhat-release | cut -f1 -d.) -ne 7 ];
+then
+	echo ">>> ERROR: Unsoported OS version for this setup script"
+	exit 1
+fi
+
 cd /opt/python-piman
 git pull origin master
 
@@ -54,18 +60,25 @@ then
   chmod +x /usr/local/bin/docker-compose
 fi
 
-rpm -qa | grep ius-release > /dev/null 2>&1
+# removing iuscomunity as git version 2.30 has been included itno EPEL
+#rpm -qa | grep ius-release > /dev/null 2>&1
+#if [ "$?" -ne 0 ];
+#then
+#  yum install  https://centos7.iuscommunity.org/ius-release.rpm -y
+#fi
+
+rpm -qa | grep git > /dev/null 2>&1
 if [ "$?" -ne 0 ];
 then
-  yum install  https://centos7.iuscommunity.org/ius-release.rpm -y
+  yum install git -y
 fi
 
-rpm -qa | grep git2u > /dev/null 2>&1
-if [ "$?" -ne 0 ];
+if [ $(rpm --queryformat "%{VERSION}" -q git | cut -f1 -d.) -ne 2 ];
 then
-  yum remove git -y
-  yum install git2u -y
+	yum remove git -y
+	yum install git -y
 fi
+
 
 rpm -qa | grep python3 > /dev/null 2>&1
 if [ "$?" -ne 0 ];

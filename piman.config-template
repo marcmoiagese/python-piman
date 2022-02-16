@@ -1,7 +1,7 @@
 [piman]
 instance-dir = /opt/puppet-instances
 config-dir = /etc/piman
-instance-template = https://github.com/jordiprats/docker-puppetmaster5
+instance-template = https://github.com/marcmoiagese/docker-puppetmaster5
 puppet-fqdn = puppet.systemadmin.es
 # bind-ip = 0.0.0.0
 base-port = 8140
